@@ -1,0 +1,34 @@
+.btn-send{
+    position: relative;
+    transition: 100ms ease-out;
+}
+
+.btn-send:hover,
+.btn-send:active{
+    color: transparent;
+}
+
+.btn-send::before{
+    content: "\00bb";
+    font-weight: bolder;
+    position: absolute;
+    font-size: 24px;
+    color:white;
+    top: -30%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0%;
+
+    transition: 100ms ease-out;
+}
+
+.btn-send:hover::before,
+.btn-send:active::before{
+    opacity: 100%;
+    top: -7.5%;
+}
+
+.mt-6{
+    margin-top: 6rem;
+}

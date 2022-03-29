@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Bootstrap-->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!--jQuery-->
+        <script src="js/jQuery.js"></script>
+
+        <!--Other-->
+        <script src="js/crittografia.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script> <!--Copy to clickboard button-->
+
+        <!--CSS-->
+        <link href="css/styles.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container-fluid bg-primary text-white pb-1 text-center mb-5">
+            <h1>Crittografia poli-alfabetica</h1>
+        </div>
+        <div class="container mb-5">
+            <h1 class="mb-4">Codifica</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Chiave 1</th>
+                        <th>Chiave 2</th>
+                        <th>Chiave 3</th>
+                        <th>Chiave 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" class="form-control" id="in-1" placeholder="Inserisci un numero"></td>
+                        <td><input type="number" class="form-control" id="in-2" placeholder="Inserisci un numero"></td>
+                        <td><input type="number" class="form-control" id="in-3" placeholder="Inserisci un numero"></td>
+                        <td><input type="number" class="form-control" id="in-4" placeholder="Inserisci un numero"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <input class="form-control" id="text" type="text" placeholder="Testo da codificare">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Risultato" id="result" class="form-control fw-bold text-primary"></td>
+                        <td>
+                            <button class="btn btn-primary ms-2 btn-send" onclick="encode();">Invia</button>
+                            <button type="button" class="btn btn-success" data-clipboard-action="copy" data-clipboard-target="#result" id="copy-btn">Copia</button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <small class="form-text d-none text-danger ms-2" id="input-warning">Caratteri non validi utilizzati</small>
+
+            <h1 class="mb-4 mt-5">Decodifica</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Chiave 1</th>
+                        <th>Chiave 2</th>
+                        <th>Chiave 3</th>
+                        <th>Chiave 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" class="form-control" id="in-d-1" placeholder="Inserisci un numero"></td>
+                        <td><input type="number" class="form-control" id="in-d-2" placeholder="Inserisci un numero"></td>
+                        <td><input type="number" class="form-control" id="in-d-3" placeholder="Inserisci un numero"></td>
+                        <td><input type="number" class="form-control" id="in-d-4" placeholder="Inserisci un numero"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <input class="form-control" id="d-text" type="text" placeholder="Testo da decodificare">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Risultato" id="d-result" class="form-control fw-bold text-primary"></td>
+                        <td>
+                            <button class="btn btn-primary ms-2 btn-send" onclick="decode();">Invia</button>
+                            <button type="button" class="btn btn-success" data-clipboard-action="copy" data-clipboard-target="#d-result" id="copy-btn">Copia</button>
+                            <button class="btn btn-secondary" onclick="copyEncodeKeys();">Copia codifica</button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <small class="form-text d-none text-danger ms-2" id="d-input-warning">Caratteri non validi utilizzati</small>
+                        
+            <p class="mb-0 fw-bold mt-6">Caratteri utilizzabili</p>
+            <input type="text" class="form-control mb-4" id="valid-characters" placeholder="Inserire dei caratteri">
+            <small class="form-text text-muted">Includere anche lo spazio*</small>
+        </div>
+    </body>
+</html>
