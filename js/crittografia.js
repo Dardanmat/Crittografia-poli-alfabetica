@@ -67,7 +67,7 @@ function decode(){
         }
 
         let keyPosition = i % d_keys.length; //calcola quale chiave utilizzare
-        result += characters[(+pos - +d_keys[keyPosition] + characters.length)% characters.length]; //(posizione - val-chiave + tot-char)% tot-char
+        result += characters[(+pos - + (d_keys[keyPosition]%characters.length) + characters.length)% characters.length]; //(posizione - val-chiave + tot-char)% tot-char
     }
     //fine decodifica
     $("#d-result").val(result);
